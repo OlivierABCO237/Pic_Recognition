@@ -36,6 +36,7 @@ The solution was to change the size of images, putting it to 28. The model was a
 - La bibliothèque __ArduinoBLE__ permet de faciliter la connexion du MCU à d'autres périphériques fonctionnant en Bluetooth. 
 Comme programme test, nous avons recupéré et modifié le programme **ButtonLED**.
 - Nous avons créé un service pour chaque Objet à reconnaitre. L'idée est d'incrémenter une variable int chaque fois que l'objet est reconnu, et de l'envoyer en temps réel par bluetooth à l'interface Node-red. D'ou les variables LED1, Resistor1, ETC...
+![Services](https://github.com/OlivierABCO237/Pic_Recognition/assets/148442075/87739fe7-4295-4cf0-864e-7572789c5438)
 
 
 
