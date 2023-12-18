@@ -38,7 +38,17 @@ Comme programme test, nous avons recupéré et modifié le programme **ButtonLED
 - Nous avons créé un service pour chaque Objet à reconnaitre. L'idée est d'incrémenter une variable int chaque fois que l'objet est reconnu, et de l'envoyer en temps réel par bluetooth à l'interface Node-red. D'ou les variables LED1, Resistor1, ETC...
 ![Services](https://github.com/OlivierABCO237/Pic_Recognition/assets/148442075/87739fe7-4295-4cf0-864e-7572789c5438)
 
+- Dans le Setup, on lance la liaison série et on initialise le BLE.
+- On Donne un nom au périphérique Bluetooth, puis on ajoute les caractéristiques au service.
+- On Ajoute chaque service puis on commence la publication.
+- Dans le loop, la fonction _BLE.poll()_ permet de lancer la transmission qui restera continue. Liée à la fonction _writeValue()_, On envoie des valeurs non stop?.
+- Ce code est disponible via le fichier __Transmission.txt__
 
+- Du coté de Node-red deux actions sont nécéssaires: Scanner les périphériques Bluetooth disponibles autour, choisir celui dont le nom correspond à celui imposé sur le code arduino, et recevoir continuellement des données de celui ci.
+- L'installation d'un nouveau Node à été nécéssaire pour faire ces actions. Un node qui est compatible avec le BLE Sense, et qui fonctionne avec le BLE.
+- Un code simple d'observation et d'affichage de message à été créé pour recupérer et afficher les données venant de l'arduino. L'idée est ici d'afficher sur 5 curseurs differents, le nombre de composants et voir l'évolution.
+
+  
 
 
 
