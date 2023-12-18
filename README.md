@@ -23,6 +23,12 @@ Classification of images of components by edge impulse and visualisation with No
 
 - It gave a very good model with a verry good accuracy, but too heavy for our MCU and for our Camera. We were not able to test the model after generating libraries.
 
+![training](https://github.com/OlivierABCO237/Pic_Recognition/assets/148442075/44599597-a112-4392-b2ae-cc028d789565)
+
+The solution was to change the size of images, putting it to 28. The model was a bit less accurate, but verry good aswell.
+
+
+
 
 
 
