@@ -21,6 +21,8 @@ Classification of images of components by edge impulse and visualisation with No
 
 ![impulsedesign](https://github.com/OlivierABCO237/Pic_Recognition/assets/148442075/e561300b-e9c5-4c8b-a82a-f272c161229f)
 
-- It gave a very good model with a verry good accuracy, but too heavy for our MCU and for our Camera.
+- It gave a very good model with a verry good accuracy, but too heavy for our MCU and for our Camera. We were not able to test the model after generating libraries.
+
+
 
 
