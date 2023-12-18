@@ -1,0 +1,94 @@
+/*
+  Button LED
+
+  This example creates a Bluetooth® Low Energy peripheral with service that contains a
+  characteristic to control an LED and another characteristic that
+  represents the state of the button.
+
+  The circuit:
+  - Arduino MKR WiFi 1010, Arduino Uno WiFi Rev2 board, Arduino Nano 33 IoT,
+    Arduino Nano 33 BLE, or Arduino Nano 33 BLE Sense board.
+  - Button connected to pin 4
+
+  You can use a generic Bluetooth® Low Energy central app, like LightBlue (iOS and Android) or
+  nRF Connect (Android), to interact with the services and characteristics
+  created in this sketch.
+
+  This example code is in the public domain.
+*/
+
+#include <ArduinoBLE.h>
+
+// Variables qui seront incrémentées à la détection de l'objet
+
+int Led1, Resistor1, Circuit1, Diode1, Capacitor1;
+
+BLEService ledService("19B10010-E8F2-537E-4F6C-D104768A1214"); // create service
+
+// create switch characteristic and allow remote device to read and write
+BLEStringCharacteristic Led("19B10011-E8F2-537E-4F6C-D104768A1214", BLERead | BLEWrite, 25);
+// create button characteristic and allow remote device to get notifications
+BLEStringCharacteristic Resistor("19B10012-E8F2-537E-4F6C-D104768A1214", BLERead | BLENotify, 25);
+
+BLEStringCharacteristic Circuit("19B10013-E8F2-537E-4F6C-D104768A1214", BLERead | BLENotify, 25);
+
+BLEStringCharacteristic Diode("19B10014-E8F2-537E-4F6C-D104768A1214", BLERead | BLENotify, 25);
+
+BLEStringCharacteristic Capacitor("19B10015-E8F2-537E-4F6C-D104768A1214", BLERead | BLENotify, 25);
+
+
+void setup() {
+  Serial.begin(9600);
+  while (!Serial);
+
+  // Mise à 0 des variables
+  Led1=0; Resistor1=0; Circuit1=0; Diode1=0; Capacitor1=0;
+
+  //pinMode(led1, OUTPUT); // use the LED as an output
+  //pinMode(buttonPin, INPUT); // use button pin as an input
+
+  // begin initialization
+  if (!BLE.begin()) {
+    Serial.println("starting Bluetooth® Low Energy module failed!");
+
+    while (1);
+  }
+
+  // set the local name peripheral advertises
+  BLE.setLocalName("Pic_Recognition");
+  // set the UUID for the service this peripheral advertises:
+  BLE.setAdvertisedService(ledService);
+
+  // add the characteristics to the service
+  ledService.addCharacteristic(Led);
+  ledService.addCharacteristic(Resistor);
+  ledService.addCharacteristic(Circuit);
+   ledService.addCharacteristic(Diode);
+   ledService.addCharacteristic(Capacitor);
+
+  // add the service
+  BLE.addService(ledService);
+
+  Led.writeValue("0");
+  Resistor.writeValue("0");
+  Circuit.writeValue("0");
+  Diode.writeValue("0");
+  Capacitor.writeValue("0");
+
+  // start advertising
+  BLE.advertise();
+
+  Serial.println("Bluetooth® device active, waiting for connections...");
+}
+
+void loop() {
+  // poll for Bluetooth® Low Energy events
+  BLE.poll();
+
+    // ENvoie de la valeur 0 sur chaque service en continu. Ceci est un exemple du finctionnement
+    Led.writeValue("0");
+    Resistor.writeValue("0");
+    Circuit.writeValue("0");
+    Diode.writeValue("0");
+    Capacitor.writeValue("0");
+}
