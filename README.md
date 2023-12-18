@@ -29,6 +29,10 @@ The solution was to change the size of images, putting it to 28. The model was a
 
 ![Train2](https://github.com/OlivierABCO237/Pic_Recognition/assets/148442075/9ede90e1-f8e9-429e-b175-a64db1f0d62b)
 
+- We generated an arduino library to test the model, and it worked verry well, like the video bellow shows.
+
+  ## STEP2: Connecting ARduino BLE Sense to Nodered
+
 
 
 
