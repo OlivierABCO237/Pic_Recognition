@@ -33,6 +33,11 @@ The solution was to change the size of images, putting it to 28. The model was a
 
   ## STEP2: Connecting ARduino BLE Sense to Nodered
 
+- La bibliothèque __ArduinoBLE__ permet de faciliter la connexion du MCU à d'autres périphériques fonctionnant en Bluetooth. 
+Comme programme test, nous avons recupéré et modifié le programme **ButtonLED**.
+- Nous avons créé un service pour chaque Objet à reconnaitre. L'idée est d'incrémenter une variable int chaque fois que l'objet est reconnu, et de l'envoyer en temps réel par bluetooth à l'interface Node-red. D'ou les variables LED1, Resistor1, ETC...
+
+
 
 
 
