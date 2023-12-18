@@ -48,7 +48,7 @@ Comme programme test, nous avons recupéré et modifié le programme **ButtonLED
 - L'installation d'un nouveau Node à été nécéssaire pour faire ces actions. Un node qui est compatible avec le BLE Sense, et qui fonctionne avec le BLE.
 - Un code simple d'observation et d'affichage de message à été créé pour recupérer et afficher les données venant de l'arduino. L'idée est ici d'afficher sur 5 curseurs differents, le nombre de composants et voir l'évolution.
 
-  
+  ![Nodered](https://github.com/OlivierABCO237/Pic_Recognition/assets/148442075/515d3d09-305c-4ad2-883c-1dceecff050b)
 
 Le code de le la classification sera aussi disponible sous le nom __Classification.txt__
 
