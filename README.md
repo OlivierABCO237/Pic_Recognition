@@ -13,3 +13,5 @@ Classification of images of components by edge impulse and visualisation with No
 
 - We saved parameters and processed features:
 
+![features](https://github.com/OlivierABCO237/Pic_Recognition/assets/148442075/91c45914-b4d9-45c5-b009-9ab4e8f6ad46)
+
